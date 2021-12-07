@@ -129,4 +129,49 @@ function log(message:number|string):void{
 // log("hello")
 log(1)
 
-// interfaces 
+// Interfaces 
+// specific structure to objects or functions 
+
+interface Userinterface{
+    readonly id:number, // once readonly property is assigned then it means that just can printted and cannot be updated 
+    name:string,
+    age?:number,  // putting question mark is like this value is optional 
+}
+
+const user1:Userinterface={
+    id:1,
+    name:"gokuljs"
+    
+}
+// genreally a type can be used with types and unions
+type pointer =number | string
+// this cannot be used in interfaces 
+
+
+// using interfaces with functions 
+interface myfunc{
+    (x:number,y:number):number
+}
+           // interface = parameter list and return type parameter and what it should return 
+const add :myfunc=(x:number,y:number):number=>x+y
+const sub :myfunc=(x:number,y:number):number=>x-y
+
+// classes 
+
+// they are also acces modifiers for class variables 
+// all public by default anything can access it 
+class Person{
+    // private id:number // private is like you should only access the content inside the same class 
+   protected id:number // acess is by same class or extended class 
+    name:string
+    constructor(id:number,name:string){
+        this.id=id
+        this.name=name
+        console.log("1212212")
+    }
+}
+
+// const brad=new Person(1,"gokul")
+// const mike=new Person(2,"heloos")
+// console.log(brad)
+// console.log(mike)
